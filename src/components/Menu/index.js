@@ -1,10 +1,9 @@
-import { DOM, dispatch, qs } from '@wallerbuilt/mantle'
+import { dispatch, DOM } from "@wallerbuilt/mantle";
+import Card from "../Card";
 
-import Card from '../Card'
+const { div, nav, aside, button } = DOM;
 
-const { div, nav, aside, button } = DOM
-
-const Cards = () => [Card(), Card()]
+const Cards = () => [Card(), Card()];
 
 const NavContent = div(
   {
@@ -19,7 +18,7 @@ const NavContent = div(
     self.classList.toggle("opacity-0");
   },
 });
-    
+
 const Nav = nav(
   {
     className:
@@ -35,6 +34,6 @@ const Nav = nav(
   ]
 );
 
-const Menu = div({}, Nav)
+const Menu = div({}, Nav);
 
-export default Menu
+export default Menu;
