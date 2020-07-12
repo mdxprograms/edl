@@ -21,19 +21,18 @@ const App = div({}, [Nav, EditorContainer]);
 // probably overkill
 const syncMount = new Promise((resolve) => {
   mount(appRoot, App);
-  resolve(EditorContainer)
-})
+  resolve(EditorContainer);
+});
 
 // Load
 document.addEventListener("DOMContentLoaded", (e) => {
-  syncMount.then(editorContainer => {
+  syncMount.then((editorContainer) => {
     const Editor = new ToastEditor({
       el: editorContainer,
-      height: '95vh',
+      height: "95vh",
       initialEditType: "markdown",
       previewStyle: "vertical",
       plugins: [[codeSyntaxHighlight, { hljs }]],
     });
-  })
-})
-
+  });
+});
