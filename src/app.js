@@ -5,7 +5,7 @@ import { DOM, mount, qs } from "@wallerbuilt/mantle";
 import "codemirror/lib/codemirror.css";
 import hljs from "highlight.js";
 import "highlight.js/styles/github.css";
-import Menu from "./components/Menu";
+import Nav from "./components/Nav";
 
 // Elements
 const { div } = DOM;
@@ -14,19 +14,26 @@ const { div } = DOM;
 
 const appRoot = qs("#app")(document);
 
-const EditorContainer = div(
-  { id: "editor", className: "" },
-  ""
-);
+const EditorContainer = div({ id: "editor" }, "");
 
-const App = div({}, [Menu, EditorContainer]);
+const App = div({}, [Nav, EditorContainer]);
 
-mount(appRoot, App);
+// probably overkill
+const syncMount = new Promise((resolve) => {
+  mount(appRoot, App);
+  resolve(EditorContainer)
+})
 
-const Editor = new ToastEditor({
-  el: EditorContainer,
-  height: '95vh',
-  initialEditType: "markdown",
-  previewStyle: "vertical",
-  plugins: [[codeSyntaxHighlight, { hljs }]],
-});
+// Load
+document.addEventListener("DOMContentLoaded", (e) => {
+  syncMount.then(editorContainer => {
+    const Editor = new ToastEditor({
+      el: editorContainer,
+      height: '95vh',
+      initialEditType: "markdown",
+      previewStyle: "vertical",
+      plugins: [[codeSyntaxHighlight, { hljs }]],
+    });
+  })
+})
+

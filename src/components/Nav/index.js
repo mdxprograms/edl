@@ -34,6 +34,4 @@ const Nav = nav(
   ]
 );
 
-const Menu = div({}, Nav);
-
-export default Menu;
+export default Nav;
