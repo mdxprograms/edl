@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": "https://github.com/mdxprograms/edl",
   "scripts": {
     "start": "parcel src/index.html -p 3000",
     "build": "parcel build src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
   "devDependencies": {
     "eslint": "^7.4.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.1.0",
     "parcel-bundler": "^1.12.4",
     "postcss": "^7.0.32",

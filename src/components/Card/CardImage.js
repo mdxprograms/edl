@@ -6,8 +6,8 @@ import classes from './classes'
 const { div } = DOM
 
 const CardImage = () => withStyle.CardImage(
-  div({ className: classes.CardImage }, "")
-);
+  div({ className: classes.CardImage }, '')
+)
 
 export default CardImage
 
