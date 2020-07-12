@@ -12,11 +12,6 @@ const CardContent = () => div({ className: classes.CardContent },
 );
 
 const Card = () =>
-  div(
-    {
-      className: "w-full px-4 md:w-1/3 lg:w-1/2 lg:flex mb-5 lg:justify-center",
-    },
-    [CardImage(), CardContent()]
-  );
+  div({ className: classes.Card }, [CardImage(), CardContent()]);
 
 export default Card;
