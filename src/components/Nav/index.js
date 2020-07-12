@@ -7,7 +7,7 @@ const { div, nav, aside, button } = DOM;
 const Cards = () => [Card(), Card()];
 
 const NavContent = div(
-  { id: "nav-content", className: classes.NavButton },
+  { id: "nav-content", className: classes.NavContent },
   Cards()
 ).when({
   "nav:toggle": (self) => {

@@ -1,5 +1,5 @@
 export default {
-  Card: "w-full px-4 md:w-1/3 lg:w-1/2 lg:flex mb-5 lg:justify-center",
+  Card: "w-full px-4 md:w-1/3 lg:w-1/2 lg:flex mb-5 lg:justify-center cursor-pointer",
   CardContent:
     "border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal",
   CardImage:
